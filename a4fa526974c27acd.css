@@ -851,14 +851,20 @@ button.swiper-pagination-bullet {
     height: 130%
 }
 
-.TicketCenterImage_qrContainer__2Uipr {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - 8.2rem);
-    height: calc(100% - 8.2rem)
+/* QRの枠：親（1:1の正方形）に対して常に同じ割合の余白で中央配置 */
+.TicketCenterImage_qrContainer__2Uipr{
+  position: absolute;
+  inset: 0;                   /* 親いっぱいを基準にする */
+  display: flex;              /* 中身(QR画像)を中央寄せ */
+  align-items: center;
+  justify-content: center;
+
+  /* 余白を％で指定（左右上下すべて同じ）：
+     元の 8.2rem マージン = 384px 幅のとき左右合計 82px → 片側 41px
+     41 / 384 = 10.677% なので だいたい 10.68% に設定 */
+  padding: 10.68%;            /* ← ここを変えればQRの大きさだけ微調整できます */
 }
+
 
 .TicketCenterImage_noImageBg__6qp9j {
     position: absolute;
@@ -980,3 +986,30 @@ button.swiper-pagination-bullet {
     display: inline-block;
     width: 25rem
 }
+
+
+/* QR画像は枠の中で正方形のまま最大化 */
+#qrCode{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+
+/* ぼかし背景の画像と、入場後に表示するイベント画像の切り取りを固定 */
+#bgImage,
+#eventImage{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* はみ出しても良いから枠を埋める */
+  object-position: 50% 50%; /* 常に中央基準（必要なら 50% 40% などに微調整） */
+}
+
+
+/* イベント画像のラッパーを親にぴったり重ねる */
+.TicketItemImage_imageContainer__A8VGl{
+  position: absolute;
+  inset: 0;
+}
+
