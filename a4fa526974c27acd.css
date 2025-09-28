@@ -856,14 +856,14 @@ button.swiper-pagination-bullet {
     height: 130%
 }
 
-/* QRの入れ物：カードに対して常に同じ割合(78.5%)にする */
+/* QRの入れ物：カードに対して常に同じ割合(70%)にする */
 .TicketCenterImage_qrContainer__2Uipr {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* どの端末でも真ん中に固定 */
-  width: 78.5%;
-  height: 78.5%;
+  width: 70%;
+  height: 70%;
 }
 
 
