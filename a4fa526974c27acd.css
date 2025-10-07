@@ -996,21 +996,3 @@ button.swiper-pagination-bullet {
   height: 100%;
   object-fit: contain;
 }
-
-
-/* ぼかし用の背景画像：カード全体を必ずカバー、中央固定でトリミング */
-#bgImage {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-}
-
-
-
-/* イベント画像のラッパーを親にぴったり重ねる */
-.TicketItemImage_imageContainer__A8VGl{
-  position: absolute;
-  inset: 0;
-}
-
