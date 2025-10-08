@@ -841,13 +841,9 @@ button.swiper-pagination-bullet {
     position: relative
 }
 
-/* QRの背後に置くイベント画像（ぼかしていない方） */
 .TicketItemImage_image__i3yYC {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;          /* 余白なく正方形をカバー */
-  object-position: center;    /* 常に中央を基準 */
-  filter: drop-shadow(0 0 4px rgba(0, 0, 0, .4));
+    object-fit: cover;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, .4))
 }
 
 
